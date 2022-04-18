@@ -24,6 +24,7 @@ class DBHelper (var context: Context) : SQLiteOpenHelper(context, DB_NAME, null,
     override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {
 
     }
+
     fun insert(st:Student) : Long
     {
         var db = writableDatabase

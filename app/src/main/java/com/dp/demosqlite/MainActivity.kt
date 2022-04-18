@@ -11,6 +11,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        Refresh()
         Insert.setOnClickListener {
             if(edtname.text.toString().equals("") || edtAge.text.toString().equals(""))
             {
@@ -33,11 +34,16 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(this,"Got error!!",Toast.LENGTH_LONG).show()
             }
 
-            var db = DBHelper(this)
-            var st = db.RetrieveData()
 
-            var ad = MyAdapter(this,st)
-            myrecyclerOP.adapter = ad
         }
+
+    }
+    fun Refresh()
+    {
+        var db = DBHelper(this)
+        var st = db.RetrieveData()
+
+        var ad = MyAdapter(this,st)
+        myrecyclerOP.adapter = ad
     }
 }
