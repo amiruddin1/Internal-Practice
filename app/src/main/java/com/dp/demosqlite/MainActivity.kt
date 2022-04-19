@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
             }
             else
             {
+                Refresh()
                 var name = edtname.text.toString()
                 var age = edtAge.text.toString().toInt()
 
@@ -29,6 +30,7 @@ class MainActivity : AppCompatActivity() {
                 if(res>0)
                 {
                     Toast.makeText(this,"Insert Data Successfully",Toast.LENGTH_LONG).show()
+                    Refresh()
                 }
                 else
                     Toast.makeText(this,"Got error!!",Toast.LENGTH_LONG).show()
